@@ -1,0 +1,173 @@
+@font-face {
+    font-family: StackSansHeadline;
+    src: url(/fonts/StackSansHeadline-Regular.ttf);
+    font-style: normal;
+    letter-spacing: 2px;
+}
+
+@font-face {
+    font-family: DMSans;
+    src: url(/fonts/DMSans-Regular.ttf);
+    font-style: normal;
+}
+
+@font-face {
+    font-family: DMSans;
+    src: url(/fonts/DMSans-Bold.ttf);
+    font-weight: bold;
+}
+
+body {
+    background-color: #FBFBFB;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: StackSansHeadline, sans-serif;
+    font-size: 1.5em;
+    line-height: 1.4;
+    letter-spacing: 2px;
+}
+
+p, a {
+    font-family: DMSans, serif;
+    font-size: 1.5em;
+    line-height: 1.4;
+}
+
+a {
+    color: #2E6240;
+    text-decoration: none;
+}
+
+.cards-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 3em;
+    margin: 3em;
+
+    @media screen and (min-width: 878px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: 1758px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    border-radius: 28px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    p:nth-of-type(1) {
+    background-color: #FFDD99;
+    font-size: 1.3em;
+    padding: .5em .7em;
+    border-radius: 28px;
+    width: fit-content;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: 20em;
+    object-fit: cover;
+    border-radius: 28px 28px 0 0;
+}
+
+.panel {
+    padding: 0 1.5em 1.5em;
+}
+
+.heart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: white;
+    border-style: none;
+    cursor: pointer;
+    font-size: 50px;
+    border-radius: 20px;
+    top: .5em;
+    right: .5em;
+    width: 70px;
+    height: 70px;
+}
+
+@keyframes --like-animation {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.10);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    75% {
+        transform: scale(1.10);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.heart-button.liked {
+    background-color: white;
+
+    svg {
+        color: red;
+        fill: red;
+        animation-name: --like-animation;
+        animation-duration: .3s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+    }
+}
+
+.success-message {
+    display: none;
+    background-color: #BBEDD1;
+    position: sticky;
+    bottom: 1em;
+    padding: 1em;
+    border-radius: 28px;
+    z-index: 10;
+
+    button {
+        background-color: transparent;
+        border-style: none;
+    }
+
+    .success-message-close-button {
+        position: absolute;
+        cursor: pointer;
+        top: .5em;
+        right: 1.2em;
+        font-size: 20px;
+        font-size: 1.7em;
+    }
+}
+
+.success-message-visible {
+    display: flex;
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    .arrow {
+        transform: translateX(5px);
+    }
+}
