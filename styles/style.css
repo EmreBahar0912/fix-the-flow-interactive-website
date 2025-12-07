@@ -1,3 +1,20 @@
+:root {
+    color-scheme: light dark;
+    --primary-color-dark: hsl(137, 41%, 31%);
+    --primary-color-darker: hsl(141, 36%, 28%);
+    --secondary-color-lm: hsl(40, 100%, 80%);
+    --secondary-color-dm: hsl(42, 100%, 30%, .5);
+    --success-message-color: hsl(146, 58%, 83%);
+    --heart-color: hsl(354, 100%, 59%);
+    --border-radius-cards: 28px;
+    --border-radius-imgs: 28px 28px 0 0;
+    --border-radius-heart-button: 20px;
+    --cards-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    --body-bg-color: hsl(0, 0%, 98%);
+    --text-lm: hsl(0, 0%, 0%);
+    --text-dm: hsl(0, 0%, 100%);
+}
+
 @font-face {
     font-family: StackSansHeadline;
     src: url(/fonts/StackSansHeadline-Regular.ttf);
@@ -18,7 +35,7 @@
 }
 
 body {
-    background-color: #FBFBFB;
+    background-color: var(--body-bg-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,7 +52,7 @@ p, a {
 }
 
 a {
-    color: #2E6240;
+    color: var(--primary-color-darker);
     text-decoration: none;
 }
 
@@ -63,14 +80,14 @@ a {
     flex-direction: column;
     position: relative;
     background-color: white;
-    border-radius: 28px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: var(--border-radius-cards);
+    box-shadow: var(--cards-box-shadow);
 
     p:nth-of-type(1) {
-    background-color: #FFDD99;
+    background-color: var(--secondary-color-lm);
     font-size: 1.3em;
     padding: .5em .7em;
-    border-radius: 28px;
+    border-radius: var(--border-radius-cards);
     width: fit-content;
     }
 }
@@ -79,7 +96,7 @@ img {
     max-width: 100%;
     height: 20em;
     object-fit: cover;
-    border-radius: 28px 28px 0 0;
+    border-radius: var(--border-radius-imgs);
 }
 
 .panel {
@@ -95,7 +112,7 @@ img {
     border-style: none;
     cursor: pointer;
     font-size: 50px;
-    border-radius: 20px;
+    border-radius: var(--border-radius-heart-button);
     top: .5em;
     right: .5em;
     width: 70px;
@@ -103,7 +120,7 @@ img {
 }
 
 .heart-button:hover {
-    border: 5px solid #FF3043;
+    border: 5px solid var(--heart-color);
 }
 
 @keyframes --like-animation {
@@ -128,8 +145,8 @@ img {
     background-color: white;
 
     svg {
-        color: #FF3043;
-        fill: #FF3043;
+        color: var(--heart-color);
+        fill: var(--heart-color);
         animation-name: --like-animation;
         animation-duration: .3s;
         animation-iteration-count: 1;
@@ -139,11 +156,11 @@ img {
 
 .success-message {
     display: none;
-    background-color: #BBEDD1;
+    background-color: var(--success-message-color);
     position: sticky;
     bottom: 1em;
     padding: 1em;
-    border-radius: 28px;
+    border-radius: var(--border-radius-cards);
     z-index: 10;
 
     button {
