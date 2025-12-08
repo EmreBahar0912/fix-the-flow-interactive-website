@@ -250,7 +250,7 @@ img {
     align-items: center;
     justify-content: center;
     position: absolute;
-    background-color: white;
+    background-color: light-dark(white, var(--background-color-dm));
     border-style: none;
     cursor: pointer;
     font-size: 50px;
@@ -284,7 +284,7 @@ img {
 }
 
 .heart-button.liked {
-    background-color: white;
+    background-color: light-dark(white, var(--background-color-dm));
 
     svg {
         color: var(--heart-color);
@@ -341,10 +341,6 @@ a:hover {
     flex-direction: column;
     gap: 1em;
 
-    @media (prefers-color-scheme: dark) {
-        background-color: var(--background-color-dm);
-    }
-
     background: linear-gradient(
         to bottom,
         #F0FFF6 0%,
@@ -355,6 +351,10 @@ a:hover {
         #FBFFFE 95%,
         #FBFBFB 100%
     );
+
+    @media (prefers-color-scheme: dark) {
+        background: var(--background-color-dm);
+    }
 }
 
 footer {
