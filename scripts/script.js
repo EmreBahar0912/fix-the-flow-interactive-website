@@ -1,3 +1,30 @@
+const hamButton = document.querySelector(".hamburger-icon");
+const hamSluitButton = document.querySelector(".hamburger-menu button");
+const hamMenu = document.querySelector(".hamburger-menu");
+
+hamButton.addEventListener("click", () => {
+  hamButton.classList.toggle("active");
+  hamMenu.classList.add("is-open");
+});
+
+hamSluitButton.addEventListener("click", () => {
+  hamButton.classList.toggle("is-open");
+  hamMenu.classList.remove("is-open");
+});
+
+const menu = document.getElementById('menu');
+const links = hamMenu.querySelectorAll('a');
+
+hamButton.addEventListener('click', () => {
+  const open = hamButton.getAttribute('aria-expanded') === 'true';
+  hamButton.setAttribute('aria-expanded', !open);
+  hamMenu.hidden = open;
+
+  links.forEach(link => {
+    link.tabIndex = open ? -1 : 0;
+  });
+});
+
 // 1. selecteer button waarmee je een rood harje krijgt
 // querySelectorAll, omdat ik alle heart buttons wil selecteren en niet alleen de eerste
 const likeButton = document.querySelectorAll('.heart-button');
