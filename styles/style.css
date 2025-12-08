@@ -356,3 +356,95 @@ a:hover {
         #FBFBFB 100%
     );
 }
+
+footer {
+  background-color: var(--primary-color-dark);
+  padding-top: 1px;
+  padding-bottom: 20px;
+
+  h2 {
+    color: white;
+    text-align: center;
+  }
+}
+
+/* animatie voor de slide van school logo's */
+/* per 10% een transform zodat alle 10 img's zichtbaar worden bij de slide */
+@keyframes slide {
+  0% {
+    /* 15% zorgt ervoor dat de 1e img van de slide iets langer zichtbaar is */
+    transform: translateX(15%);
+  }
+  10% {
+    transform: translateX(-300px);
+  }
+  20% {
+    transform: translateX(-600px);
+  }
+  30% {
+    transform: translateX(-900px);
+  }
+  40% {
+    transform: translateX(-1200px);
+  }
+  50% {
+    transform: translateX(-1500px);
+  }
+  60% {
+    transform: translateX(-1800px);
+  }
+  70% {
+    transform: translateX(-2100px);
+  }
+  80% {
+    transform: translateX(-2400px);
+  }
+  90% {
+    transform: translateX(-2700px);
+  }
+  100% {
+    /* 15% zorgt ervoor dat de 1e img van de slide iets langer zichtbaar is */
+    transform: translateX(15%);
+  }
+}
+
+.school-logos {
+  overflow: hidden;
+}
+
+/* foto's naast elkaar zetten + animatie van keyframes hierboven */
+.school-logos-slide {
+  white-space: nowrap;
+  animation: 33s slide infinite linear;
+
+  img {
+    height: 50px;
+  }
+}
+
+.contact {
+  text-align: center;
+  place-content: center;
+  gap: 2em;
+  color: white;
+
+  p {
+    font-weight: 200;
+    color: white;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+  }
+}
+
+.contact-1 p {
+  margin-top: -20px;
+}
+
+.contact-2 p {
+  margin-top: -20px;
+  margin-bottom: 0;
+}
