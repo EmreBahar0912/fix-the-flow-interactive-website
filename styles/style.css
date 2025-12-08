@@ -8,9 +8,11 @@
     --heart-color: hsl(354, 100%, 59%);
     --border-radius-cards: 28px;
     --border-radius-imgs: 28px 28px 0 0;
+    --panel-color-dm: hsl(228, 7%, 14%);
     --border-radius-heart-button: 20px;
     --cards-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    --body-bg-color: hsl(0, 0%, 98%);
+    --body-bg-color-lm: hsl(0, 0%, 98%);
+    --body-bg-color-dm: hsl(0, 0%, 7%);
     --text-lm: hsl(0, 0%, 0%);
     --text-dm: hsl(0, 0%, 100%);
 }
@@ -35,7 +37,7 @@
 }
 
 body {
-    background-color: var(--body-bg-color);
+    background-color: light-dark(var(--body-bg-color-lm), var(--body-bg-color-dm));
     margin: 0;
 }
 
@@ -54,6 +56,10 @@ p, a {
     font-family: DMSans, serif;
     font-size: 1.5em;
     line-height: 1.4;
+}
+
+p {
+    color: light-dark(var(--text-lm), var(--text-dm));
 }
 
 a {
@@ -186,7 +192,7 @@ hr {
     box-shadow: var(--cards-box-shadow);
 
     p:nth-of-type(1) {
-    background-color: var(--secondary-color-lm);
+    background-color: light-dark(var(--secondary-color-lm), var(--secondary-color-dm));
     font-size: 1.3em;
     padding: .5em .7em;
     border-radius: var(--border-radius-cards);
@@ -203,6 +209,7 @@ img {
 
 .panel {
     padding: 0 1.5em 1.5em;
+    background-color: light-dark(white, var(--panel-color-dm));
 }
 
 .heart-button {
