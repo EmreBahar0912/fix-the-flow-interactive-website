@@ -39,6 +39,10 @@
     font-weight: bold;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: light-dark(var(--body-bg-color-lm), var(--body-bg-color-dm));
     margin: 0;
@@ -356,6 +360,18 @@ a:hover {
         background: var(--background-color-dm);
     }
 }
+
+.info-section article {
+
+    transition:1s;
+
+    &.hidden {
+        opacity:0;
+        translate:0 2em;
+    }
+}
+
+
 
 footer {
   background-color: var(--primary-color-dark);

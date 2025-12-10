@@ -25,11 +25,14 @@ hamButton.addEventListener('click', () => {
   });
 });
 
+
+
 // 1. selecteer button waarmee je een rood harje krijgt
 // querySelectorAll, omdat ik alle heart buttons wil selecteren en niet alleen de eerste
 const likeButton = document.querySelectorAll('.heart-button');
 // 1. selecteer button waarmee je een succesmelding krijgt na het klikken op de likeButton
 const successMessage = document.querySelector('.success-message');
+
 const closeSuccessMessageButton = document.querySelector('.success-message-close-button');
 
 // 2. klik-event toevoegen voor elke likeButton
@@ -44,9 +47,43 @@ closeSuccessMessageButton.addEventListener('click', hideSuccessMessage);
 // this staat voor de heart-button waarop je hebt geklikt
 function toggleFunction() {
     this.classList.toggle('liked');
-    successMessage.classList.toggle('success-message-visible');
+    successMessage.classList.add('success-message-visible');
+
+    setTimeout(() => {
+        hideSuccessMessage()
+    }, 2500);
 }
 
 function hideSuccessMessage() {
     successMessage.classList.remove('success-message-visible');
 }
+
+
+
+// intersection observer
+
+// const observer = new IntersectionObserver((entries))
+
+// hiddenElements.forEach((el) => observer.observe(el));
+
+
+const hiddenElements = document.querySelectorAll('.hidden');
+
+// console.log(hiddenElements)
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+
+    const intersecting = entry.isIntersecting
+
+    if (intersecting == true) {
+
+        entry.target.classList.remove("hidden")
+    }
+
+  })
+})
+
+hiddenElements.forEach( hiddenElement => {
+    observer.observe( hiddenElement )
+} )
