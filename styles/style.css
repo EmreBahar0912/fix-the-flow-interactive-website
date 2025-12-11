@@ -269,7 +269,7 @@ hr {
 
         a {
             display: block;
-            background-color: var(--primary-color-dark);
+            background-color: light-dark(var(--primary-color-dark), hsl(137, 41%, 21%));
             color: white;
             border-radius: 28px;
             padding: .5em 1em;
@@ -279,7 +279,7 @@ hr {
         }
 
         a:hover {
-            background-color: hsl(137, 45%, 40%);
+            background-color: light-dark(hsl(137, 45%, 40%), hsl(137, 41%, 27%));
         }
 
         div:nth-of-type(2) {
