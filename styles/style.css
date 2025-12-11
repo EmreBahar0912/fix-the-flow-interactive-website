@@ -95,8 +95,8 @@ header {
 hr {
   width: 100%;
   height: 25px;
-  background-color: var(--primary-color-dark);
-  border: 1px solid var(--primary-color-dark);
+  background-color: light-dark(var(--primary-color-dark), hsl(137, 41%, 21%));
+  border: 1px solid light-dark(var(--primary-color-dark), hsl(137, 41%, 21%));
 }
 
 /* hamburger menu style */
@@ -453,7 +453,7 @@ a:hover {
 }
 
 footer {
-  background-color: var(--primary-color-dark);
+  background-color: light-dark(var(--primary-color-dark), hsl(137, 41%, 21%));
   padding-top: 1px;
   padding-bottom: 20px;
 
