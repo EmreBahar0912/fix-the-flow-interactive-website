@@ -13,7 +13,7 @@
     --background-color-dm: hsl(228, 7%, 14%);
     --border-radius-heart-button: 20px;
     --cards-box-shadow-lm: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    --cards-box-shadow-dm: rgb(255, 255, 255) 0px 1px 12px;
+    --cards-box-shadow-dm: rgb(151, 151, 151) 0px 1px 12px;
     --body-bg-color-lm: hsl(0, 0%, 98%);
     --body-bg-color-dm: hsl(0, 0%, 7%);
     --text-lm: hsl(0, 0%, 0%);
@@ -84,6 +84,7 @@ p {
 a {
     color: light-dark(var(--primary-color-darker), var(--primary-color-light));
     text-decoration: none;
+    cursor: pointer;
 }
 
 header {
@@ -277,6 +278,10 @@ hr {
             margin-inline: auto;
         }
 
+        a:hover {
+            background-color: hsl(137, 45%, 40%);
+        }
+
         div:nth-of-type(2) {
             padding: 2em;
         }
@@ -289,7 +294,7 @@ hr {
     }
 
     .h2-events {
-        color: #1D1D1F;
+        color: light-dark(#1D1D1F, #FCFCFF);
     }
 }
 
@@ -414,6 +419,7 @@ a:hover {
     text-align: center;
     display: flex;
     flex-direction: column;
+    padding: 3em;
     gap: 1em;
 
     background: linear-gradient(
@@ -442,7 +448,9 @@ a:hover {
     }
 }
 
-
+#p-align {
+    text-align: left;
+}
 
 footer {
   background-color: var(--primary-color-dark);
