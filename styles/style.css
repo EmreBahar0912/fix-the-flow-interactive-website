@@ -39,6 +39,12 @@
     font-weight: bold;
 }
 
+@font-face {
+    font-family: Valentina;
+    src: url(/fonts/Hello\ Valentina.ttf);
+    font-weight: bold;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -216,42 +222,6 @@ hr {
     }
 }
 
-.main-news {
-    text-align: center;
-
-    @media screen and (min-width: 878px) {
-        display: none;
-    }
-
-    img {
-        width: 80%;
-        height: 450px;
-        object-fit: cover;
-        border-radius: 28px;
-
-        @media screen and (min-width: 960px) {
-            height: 650px;
-        }
-
-        @media screen and (min-width: 1475px) {
-            height: 850px;
-        }
-    }
-}
-
-.main-news-tablet-laptop {
-    display: none;
-
-    @media screen and (min-width: 878px) {
-        display: flex;
-        gap: 2rem;
-
-        img {
-            width: 300em;
-        }
-    }
-}
-
 .main {
     display: grid;
     grid-template-columns: 1fr;
@@ -259,10 +229,16 @@ hr {
     gap: 3em;
     margin: 3em;
 
+    @media screen and (min-width: 878px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+
     article {
         place-items: center;
         text-align: center;
-        gap: 1em;
+        padding: 1.5em;
         box-shadow: var(--cards-box-shadow-lm);
         border-radius: var(--border-radius-cards);
         background: linear-gradient(
@@ -276,22 +252,59 @@ hr {
         #FBFBFB 100%
     );
 
+    .calli {
+        display: inline;
+        font-family: Valentina, sans-serif;
+        font-size: 1.5em;
+        background: #00D23C;
+        background: linear-gradient(to right in oklch, #00D23C 0%, #F1B940 50%, #FF0000 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
     @media (prefers-color-scheme: dark) {
         background: var(--background-color-dm);
     }
 
         a {
             display: block;
-            background-color: green;
+            background-color: var(--primary-color-dark);
             color: white;
             border-radius: 28px;
             padding: .5em 1em;
+            width: max-content;
+            /* margin inline auto zorgt voor centreren van a-tag binnen de card */
+            margin-inline: auto;
         }
 
         div:nth-of-type(2) {
             padding: 2em;
         }
     }
+}
+
+.h2-divider {
+    h2 {
+        margin: 0;
+    }
+
+    .h2-events {
+        color: #1D1D1F;
+    }
+}
+
+#h2-divider-child {
+    display: inline;
+    font-family: DMSans, sans-serif;
+    font-size: 1.5em;
+    background: #00D23C;
+    background: linear-gradient(to right in oklch, #00D23C 0%, #F1B940 50%, #FF0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bigger-heading {
+    font-size: 3em;
 }
 
 img {
