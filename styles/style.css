@@ -253,6 +253,10 @@ hr {
         #FBFBFB 100%
     );
 
+    @media (prefers-color-scheme: dark) {
+        box-shadow: var(--cards-box-shadow-dm);
+    }
+
     .calli {
         display: inline;
         font-family: Valentina, sans-serif;
