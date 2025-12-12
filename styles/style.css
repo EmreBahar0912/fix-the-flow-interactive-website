@@ -115,7 +115,7 @@ hr {
   transition: 0.3s ease;
 
   @media screen and (min-width: 1300px) {
-    display: hidden;
+    display: none;
   }
 }
 
@@ -474,41 +474,17 @@ footer {
 /* animatie voor de slide van school logo's */
 /* per 10% een transform zodat alle 10 img's zichtbaar worden bij de slide */
 @keyframes slide {
-  0% {
-    /* 15% zorgt ervoor dat de 1e img van de slide iets langer zichtbaar is */
-    transform: translateX(15%);
-  }
-  10% {
-    transform: translateX(-300px);
-  }
-  20% {
-    transform: translateX(-600px);
-  }
-  30% {
-    transform: translateX(-900px);
-  }
-  40% {
-    transform: translateX(-1200px);
-  }
-  50% {
-    transform: translateX(-1500px);
-  }
-  60% {
-    transform: translateX(-1800px);
-  }
-  70% {
-    transform: translateX(-2100px);
-  }
-  80% {
-    transform: translateX(-2400px);
-  }
-  90% {
-    transform: translateX(-2700px);
-  }
-  100% {
-    /* 15% zorgt ervoor dat de 1e img van de slide iets langer zichtbaar is */
-    transform: translateX(15%);
-  }
+  0%   { margin-left: 15%; }
+  10%  { margin-left: -300px; }
+  20%  { margin-left: -600px; }
+  30%  { margin-left: -900px; }
+  40%  { margin-left: -1200px; }
+  50%  { margin-left: -1500px; }
+  60%  { margin-left: -1800px; }
+  70%  { margin-left: -2100px; }
+  80%  { margin-left: -2400px; }
+  90%  { margin-left: -2700px; }
+  100% { margin-left: 15%; }
 }
 
 .school-logos {
