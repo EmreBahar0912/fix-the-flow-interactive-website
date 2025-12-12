@@ -177,6 +177,10 @@ hr {
   transition: opacity 0.5s ease-in-out;
 }
 
+.nav li a:active {
+  background-color: rgb(190, 190, 190);
+}
+
 .logo {
   width: 100%;
   height: auto;
