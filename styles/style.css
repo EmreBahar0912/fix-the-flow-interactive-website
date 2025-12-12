@@ -271,6 +271,10 @@ hr {
         -webkit-text-fill-color: transparent;
     }
 
+    img {
+      max-width: 100%;
+    }
+
     @media (prefers-color-scheme: dark) {
         background: var(--background-color-dm);
     }
