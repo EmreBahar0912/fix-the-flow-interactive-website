@@ -478,17 +478,12 @@ footer {
 /* animatie voor de slide van school logo's */
 /* per 10% een transform zodat alle 10 img's zichtbaar worden bij de slide */
 @keyframes slide {
-  0%   { margin-left: 15%; }
-  10%  { margin-left: -300px; }
-  20%  { margin-left: -600px; }
-  30%  { margin-left: -900px; }
-  40%  { margin-left: -1200px; }
-  50%  { margin-left: -1500px; }
-  60%  { margin-left: -1800px; }
-  70%  { margin-left: -2100px; }
-  80%  { margin-left: -2400px; }
-  90%  { margin-left: -2700px; }
-  100% { margin-left: 15%; }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .school-logos {
