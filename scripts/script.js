@@ -87,3 +87,11 @@ const observer = new IntersectionObserver(entries => {
 hiddenElements.forEach( hiddenElement => {
     observer.observe( hiddenElement )
 } )
+
+
+
+const inputElement = document.querySelector('input');
+
+inputElement.addEventListener('invalid', function() {
+  inputElement.setCustomValidity('Dit veld is verplicht');
+});

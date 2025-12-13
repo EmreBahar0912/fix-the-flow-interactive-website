@@ -217,6 +217,7 @@ main {
 form {
     display: grid;
     margin: 0 auto;
+    appearance: none;
     width: clamp(320px, 90vw, 560px);
     padding: clamp(1rem, 3vw, 2rem);
 
@@ -240,6 +241,17 @@ form {
 
         label {
             font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        input:focus {
+            border-color: hsl(137, 20%, 45%);
+            background-color: white;
+            outline: none;
+        }
+
+        input:focus-visible {
+            outline: 2px solid hsl(137, 30%, 40%);
+            outline-offset: 3px;
         }
 }
 
