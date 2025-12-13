@@ -233,7 +233,7 @@ hr {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
     gap: 3em;
-    margin: 1em;
+    margin: 3em;
     max-width: 100vw;
 
     @media screen and (min-width: 878px) {
@@ -245,7 +245,7 @@ hr {
     article {
         place-items: center;
         text-align: center;
-        /* padding: 1.5em; */
+        padding: 1.5em;
         box-shadow: var(--cards-box-shadow-lm);
         border-radius: var(--border-radius-cards);
         background: linear-gradient(
@@ -530,6 +530,7 @@ footer {
 .contact-2 p {
   margin: 0.2em 0;
   max-width: 100%;
+  word-break: break-word;
   box-sizing: border-box;
   text-wrap: wrap;
 }
