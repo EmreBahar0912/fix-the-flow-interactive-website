@@ -253,6 +253,27 @@ form {
             outline: 2px solid hsl(137, 30%, 40%);
             outline-offset: 3px;
         }
+
+        #name {
+            background-image: url(/assets/user-round.png);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+        }
+
+        #email {
+            background-image: url(/assets/mail\ \(1\).png);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+        }
+
+        #bericht {
+            background-image: url(/assets/square-pen.png);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+        }
 }
 
 footer {
