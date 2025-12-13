@@ -215,18 +215,32 @@ main {
 }
 
 form {
-    p {
-        margin-bottom: .3em;
-    }
+    display: grid;
+    margin: 0 auto;
+    width: clamp(320px, 90vw, 560px);
+    padding: clamp(1rem, 3vw, 2rem);
 
-    #button {
-        background-color: hsl(141deg 49.68% 35.35%);
-        border-style: none;
-        color: white;
-        width: 7em;
-        margin-top: 1em;
-        cursor: pointer;
-    }
+        h2 {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-bottom: .3em;
+        }
+
+        #button {
+            background-color: hsl(141deg 49.68% 35.35%);
+            border-style: none;
+            color: white;
+            width: 7em;
+            margin-top: 1em;
+            cursor: pointer;
+        }
+
+        label {
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
 }
 
 footer {
