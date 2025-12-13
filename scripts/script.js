@@ -1,17 +1,25 @@
+// 1. selecteer het hamburger icoon
 const hamButton = document.querySelector(".hamburger-icon");
+// 1. selecteer hamburger-menu button
 const hamSluitButton = document.querySelector(".hamburger-menu button");
+// 1. selecteer het hamburger-menu
 const hamMenu = document.querySelector(".hamburger-menu");
 
+// 2. voeg een event toe voor het openen van het hamburger-menu
 hamButton.addEventListener("click", () => {
   hamButton.classList.toggle("active");
   hamMenu.classList.add("is-open");
 });
 
+// 2. voeg een event toe voor het sluiten van het hamburger-menu
 hamSluitButton.addEventListener("click", () => {
   hamButton.classList.toggle("is-open");
   hamMenu.classList.remove("is-open");
 });
 
+
+
+// code voor tabben negeren wanneer hamburger-menu gesloten is
 const menu = document.getElementById('menu');
 const links = hamMenu.querySelectorAll('a');
 
@@ -32,7 +40,7 @@ hamButton.addEventListener('click', () => {
 const likeButton = document.querySelectorAll('.heart-button');
 // 1. selecteer button waarmee je een succesmelding krijgt na het klikken op de likeButton
 const successMessage = document.querySelector('.success-message');
-
+// 1. selecteer de button waarmee je het success-message mee sluit
 const closeSuccessMessageButton = document.querySelector('.success-message-close-button');
 
 // 2. klik-event toevoegen voor elke likeButton
@@ -45,6 +53,7 @@ closeSuccessMessageButton.addEventListener('click', hideSuccessMessage);
 // 3. verander de classes heart-button en success-message naar liked en visible,
 // zodat er een interactie plaats vindt
 // this staat voor de heart-button waarop je hebt geklikt
+// timer van 2.5s als er niet op sluitknop wordt geklikt
 function toggleFunction() {
     this.classList.toggle('liked');
     successMessage.classList.add('success-message-visible');
@@ -87,11 +96,3 @@ const observer = new IntersectionObserver(entries => {
 hiddenElements.forEach( hiddenElement => {
     observer.observe( hiddenElement )
 } )
-
-
-
-const inputElement = document.querySelector('input');
-
-inputElement.addEventListener('invalid', function() {
-  inputElement.setCustomValidity('Dit veld is verplicht');
-});
