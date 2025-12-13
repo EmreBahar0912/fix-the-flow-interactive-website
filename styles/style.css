@@ -267,6 +267,7 @@ hr {
         display: inline;
         font-family: Valentina, sans-serif;
         font-size: 1.5em;
+        word-break: break-word;
         background: #00D23C;
         background: linear-gradient(to right in oklch, #00D23C 0%, #F1B940 50%, #FF0000 100%);
         -webkit-background-clip: text;
