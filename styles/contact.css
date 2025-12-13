@@ -1,0 +1,307 @@
+body {
+  margin: 0;
+  color: var(--lightmode-text);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+hr {
+  width: 100%;
+  height: 25px;
+  background-color: var(--primary-color-dark);
+  border: 1px solid var(--primary-color-dark);
+}
+
+/* hamburger menu style */
+.hamburger-menu {
+  background-color: rgb(241, 241, 241);
+  height: 100vh;
+  width: 100%;
+  max-width: 300px;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  transition: 0.3s ease;
+
+  @media screen and (min-width: 1300px) {
+    position: static;
+    background: none;
+    order: 1;
+    width: 100%;
+    height: unset;
+    max-width: unset;
+  }
+}
+
+.close-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  translate: 700% 30%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @media screen and (min-width: 1300px) {
+    display: none;
+  }
+}
+
+.hamburger-menu.is-open {
+  left: 0;
+}
+
+.hamburger-icon {
+  background-color: transparent;
+  border: none;
+  font-size: 2.5rem;
+  display: flex;
+  margin-top: 70%;
+  cursor: pointer;
+
+  @media screen and (min-width: 1300px) {
+    display: none;
+  }
+}
+
+.search-icon {
+  background-color: transparent;
+  border: none;
+  font-size: 2.5rem;
+  display: flex;
+  margin-top: 70%;
+  font-weight: 100;
+
+  @media screen and (min-width: 1300px) {
+    display: none;
+  }
+}
+
+.nav {
+  list-style: none;
+
+  @media screen and (min-width: 1300px) {
+    display: flex;
+    gap: 2.3em;
+  }
+}
+
+.nav li {
+  margin-bottom: 1.8em;
+  translate: -10%;
+}
+
+.nav li:last-child {
+  margin-bottom: 0;
+}
+
+.nav li a {
+  color: black;
+}
+
+.nav li a:hover {
+  color: var(--primary-color-dark);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  width: 400px;
+  height: 120px;
+}
+
+/* HIER BEGINT DE MAIN VOOR DE CONTACTPAGINA!!! */
+main {
+    margin: 16px;
+}
+
+.main-title {
+    text-align: center;
+}
+
+.main-title p {
+    margin-top: -15px;
+}
+
+.all-cards {
+    display: grid;
+    place-content: center;
+    grid-auto-rows: 350px;
+    gap: 1em;
+    grid-template-areas:
+      "box-1"
+      "box-2"
+      "box-3"
+      "box-4"
+      "box-5"
+      "box-6"
+      "box-7"
+      "box-8";
+
+    @media screen and (min-width: 820px) {
+      gap: 2em;
+      grid-template-areas:
+        "box-1 box-2"
+        "box-3 box-4"
+        "box-5 box-6"
+        "box-7 box-8";
+    }
+
+    @media screen and (min-width: 1300px) {
+      gap: 3em;
+      grid-template-areas: 
+        "box-1 box-2 box-3"
+        "box-4 box-5 box-6"
+        "box-7 box-8 .";
+    }
+}
+
+.card {
+    border: 2px solid #ACACAC;
+    box-shadow: 0 4px 4px #00000040;
+    border-radius: 5%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    @media screen and (min-width: 768px) {
+      width: 375px;
+    }
+}
+
+.card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.member-name {
+    font-weight: bolder;
+}
+
+.member-rank {
+    margin-top: -15px;
+    text-align: center;
+    color: var(--primary-color-dark);
+}
+
+.card a {
+    /* een a-tag is standaard inline, dus nog een keer flex aangeven! */
+    display: flex;
+    place-content: center;
+    font-weight: bolder;
+    padding: 16px;
+    gap: 10px;
+    /* de a neemt nu 100% van de ruimte in de card zelf */
+    width: 100%;
+    border-radius: 50px;
+    background-color: var(--primary-color-lightest);
+}
+
+footer {
+  background-color: var(--primary-color-dark);
+  padding-top: 1px;
+  padding-bottom: 20px;
+
+  h2 {
+    color: white;
+    text-align: center;
+  }
+}
+
+/* animatie voor de slide van school logo's */
+/* per 10% een transform zodat alle 10 img's zichtbaar worden bij de slide */
+@keyframes slide {
+  0% {
+    /* 15% zorgt ervoor dat de 1e img van de slide iets langer zichtbaar is */
+    transform: translateX(15%);
+  }
+  10% {
+    transform: translateX(-300px);
+  }
+  20% {
+    transform: translateX(-600px);
+  }
+  30% {
+    transform: translateX(-900px);
+  }
+  40% {
+    transform: translateX(-1200px);
+  }
+  50% {
+    transform: translateX(-1500px);
+  }
+  60% {
+    transform: translateX(-1800px);
+  }
+  70% {
+    transform: translateX(-2100px);
+  }
+  80% {
+    transform: translateX(-2400px);
+  }
+  90% {
+    transform: translateX(-2700px);
+  }
+  100% {
+    /* 15% zorgt ervoor dat de 1e img van de slide iets langer zichtbaar is */
+    transform: translateX(15%);
+  }
+}
+
+.school-logos {
+  overflow: hidden;
+}
+
+/* foto's naast elkaar zetten + animatie van keyframes hierboven */
+.school-logos-slide {
+  white-space: nowrap;
+  animation: 33s slide infinite linear;
+
+  img {
+    height: 50px;
+  }
+}
+
+.contact {
+  text-align: center;
+  place-content: center;
+  gap: 2em;
+  color: white;
+
+  p {
+    font-weight: 200;
+    color: white;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+  }
+}
+
+.contact-1 p {
+  margin-top: -20px;
+}
+
+.contact-2 p {
+  margin-top: -20px;
+  margin-bottom: 0;
+}
