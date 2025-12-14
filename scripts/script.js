@@ -96,3 +96,16 @@ const observer = new IntersectionObserver(entries => {
 hiddenElements.forEach( hiddenElement => {
     observer.observe( hiddenElement )
 } )
+
+
+
+// USER INVALID CODE
+
+// 1. zoek het input element
+const inputElement = document.querySelector('input');
+
+// 2. voeg een event toe
+inputElement.addEventListener('invalid', function() {
+  // 3. voeg een invalid bericht toe
+  inputElement.setCustomValidity('Stop');
+});
