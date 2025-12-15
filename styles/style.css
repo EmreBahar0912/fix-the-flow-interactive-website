@@ -91,6 +91,15 @@ a {
 header {
   display: flex;
   justify-content: space-between;
+
+  @media screen and (min-width: 1300px) {
+    display: grid;
+    place-content: center;
+
+    .logo {
+      place-content: center;
+    }
+  }
 }
 
 hr {
@@ -116,7 +125,12 @@ hr {
   transition: 0.3s ease;
 
   @media screen and (min-width: 1300px) {
-    display: none;
+    position: static;
+    background: none;
+    order: 1;
+    width: 100%;
+    height: unset;
+    max-width: unset;
   }
 }
 
@@ -128,6 +142,10 @@ hr {
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  @media screen and (min-width: 1300px) {
+    display: none;
+  }
 }
 
 .hamburger-menu.is-open {
@@ -143,7 +161,7 @@ hr {
   cursor: pointer;
 
   @media screen and (min-width: 1300px) {
-    display: hidden;
+    display: none;
   }
 }
 
@@ -154,10 +172,19 @@ hr {
   display: flex;
   margin-top: 70%;
   font-weight: 100;
+
+  @media screen and (min-width: 1300px) {
+    display: none;
+  }
 }
 
 .nav {
   list-style: none;
+
+  @media screen and (min-width: 1300px) {
+    display: flex;
+    gap: 2.3em;
+  }
 }
 
 .nav li {
